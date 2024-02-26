@@ -1,6 +1,6 @@
 package org.example;
 
-public class Main {
+public class BinarySearch {
     public static void main(String[] args) {
         // Array of numbers
         int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 20, 100, 200, 300, 400, 500, 1002, 1003, 100004};
