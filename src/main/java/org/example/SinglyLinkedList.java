@@ -31,6 +31,18 @@ public class SinglyLinkedList<E> {
         return tail.getElement();
     }
 
+    public E removeFirst(){
+        if (isEmpty()) {
+            return null;
+        }
+        E answer = head.getElement();
+        head = head.getNext();
+        size --;
+        if (size == 0){
+            tail = null;
+        }
+        return answer;
+    }
     public void addFirst(E e){
         head = new Node<>(e,head);
         if (size == 0 ){
