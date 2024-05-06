@@ -31,6 +31,23 @@ public class SinglyLinkedList<E> {
         return tail.getElement();
     }
 
+    public void addFirst(E e){
+        head = new Node<>(e,head);
+        if (size == 0 ){
+            tail = head;
+             size++;
+        }
+    }
+    public void addLast(E e){
+        Node<E> newest = new Node<>(e,null);
+        if (isEmpty()){
+            head = newest;
+        }else {
+            tail.setNext(newest);
+            tail = newest;
+            size++;
+        }
+    }
     private static class Node<E> {
 
         private E element;
