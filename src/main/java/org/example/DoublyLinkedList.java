@@ -30,6 +30,7 @@ public class DoublyLinkedList<E> {
         }
         return trailer.getPrev().getElement();
     }
+
     private static class Node<E>{
        private E element;
        private Node<E> next;
