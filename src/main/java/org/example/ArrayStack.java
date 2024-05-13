@@ -7,7 +7,11 @@ public class ArrayStack<E> implements Stack<E> {
     private int t = -1;
 
     public ArrayStack() {
-        data = (E[]) new Object[CAPACITY];
+        this(CAPACITY);
+    }
+
+    public ArrayStack(int capacity) {
+        data = (E[]) new Object[capacity];
     }
 
     @Override
@@ -29,18 +33,19 @@ public class ArrayStack<E> implements Stack<E> {
     }
 
     @Override
-    public void push(E element) {
+    public void push(E element) throws IllegalStateException {
         if (size() == data.length) {
             throw new IllegalStateException("stack is full");
         }
         data[++t] = element;
-    }
 
+    }
     @Override
     public E pop() {
         if (isEmpty()) {
             return null;
         }
+
         E answer = data[t];
         data[t] = null;
         t--;
