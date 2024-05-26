@@ -18,11 +18,21 @@ public abstract class AbstractTree<E> implements Tree<E> {
     public boolean isEmpty() {
         return size() == 0;
     }
-    public int depth(Position<E> position){
-        if (isRoot(position)){
+
+    public int depth(Position<E> position) {
+        if (isRoot(position)) {
             return 0;
-        }else {
+        } else {
             return 1 + depth(parent(position));
         }
+    }
+
+    public int height(Position<E> position) {
+        int h = 0;
+        for (Position<E> child : children(position)) {
+            h = Math.max(h, 1 + height(child));
+
+        }
+        return h;
     }
 }
